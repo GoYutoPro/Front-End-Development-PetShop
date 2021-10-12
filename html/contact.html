@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+    <title>PetShop</title>
+    <!-- (A) CSS + JS -->
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function ValidateForm(){
+            x = document.forms["FormValidator"]["fname"].value;
+            if(x == ""){
+                alert("Please insert your name!")
+                return false;
+            }
+        }
+    </script>
+
+    <body>
+         <!--This is the table with the navigation bar and all the differnet links to other pages/files, the navigation bar also has a search bar and the search button with htier own classses defined-->
+         <table><form class="searchForm">
+            <!--This is the table with the navigation bar and a search bar-->
+            <div class="center">
+                <nav class="topnav">
+                    <a class="active" href="index.html">Home Page</a>
+                    <a href="cart.html">Pets</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="About Us!">About Us</a>
+                    <a href="Reviews Page!">Reviews Page</a>
+                        <input class="reset" type="text" name="searchInput" placeholder="Search...">
+                        <input class="buttonReset" type="submit">
+                </form>
+                </nav>
+                </div>
+        </table>
+        <table class="tableForm" width="700" height="450" border="1">
+
+            <form name="FormValidator" onsubmit="return ValidateForm()">
+                <tbody>
+                    <th width="10 ">
+                        <div>First Name!</div>
+                        <div><input class="first" name="fname" width="10 " type="First Name " placeholder="First Name ">
+                        </div>
+                        <div>Last Name!</div>
+                        <div><input class="last" type="Last Name " placeholder="Last Name "></div>
+                        <div>Email!</div>
+                        <input class="email" type="email" width="10" placeholder="Email"></input>
+                        <div>Message!</div>
+                        <div><textarea class="textarea"></textarea></div>
+                        <div>
+                            <input class="contactButton" type="submit" name="Submit!" id="Submit! " value="Submit!" width="50" height="100">
+                        </div>
+                    </th>
+                </tbody>
+            </form>
+        </table>
+    </body>
+    <footer class="footer">
+        <ul>
+            <p>Check Out Our Social Media!</p>
+        </ul>
+    </footer>
+</head>
+<style>
+    .tableForm {
+        width: 1200px;
+        height: 550spx;
+        margin-left: 350px;
+    }
+    
+    .contactButton {
+        width: 150px;
+        height: 35px;
+    }
+    
+    .textarea {
+        width: 300px;
+        height: 150px;
+    }
+    
+    .first {
+        width: 200px;
+        height: auto;
+    }
+    
+    .last {
+        width: 200px;
+        height: auto;
+    }
+    
+    .email {
+        width: 200px;
+        height: auto;
+    }
+</style>
+
+</html>
