@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>PetShop</title>
+    <body>
+        <!--Here's my link to my stylesheet for my website located in the web root-->
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/cart.js"></script>
+        <!-- This is my div section for my Navigation Bar located at the top of the web page -->
+        <table>
+            <form class="searchForm">
+                <!--This is the table with the navigation bar and a search bar-->
+                <div class="center">
+                    <nav class="topnav">
+                        <a class="active" href="index.html">Home Page</a>
+                        <a href="cart.html">Pets</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="about.html">About Us</a>
+                        <a href="reviews.html">Reviews Page</a>
+                        <!-- Search bar and search/clear button, when the button is clicked it will reset and clear the text in the search bar -->
+                        <input class="reset" type="text" name="searchInput" placeholder="Search...">
+                        <input class="buttonReset" type="reset">
+            </form>
+            </nav>
+        </table>
+        </div>
+        <!--This is the welcome message at the top of the web page, the marquee tag allows the text to move from left to right there is also a direction stated too --->
+        <td>
+            <centre>
+                <marquee width="100%" direction="right" height="50px">
+                    WELCOME TO MY PET-SHOP WEBSITE! I HOPE YOU STAY HERE LITTLE LONGER!
+                </marquee>
+            </centre>
+        </td>
+        <br>
+        <table class="table">
+    <!-- This code defies the slideshow which is on the website, and the small table which is under it with the 2 buttons.  -->
+            <td>
+                <p>
+                    <h4>Buy your pet with just few clicks, here on our website. Check out our pet collection</h4>
+                </p>
+                <button type="button" class="button2">Pets Page</button>
+                <p>
+                    <h4>If you have any questions, feel free to ask us here:</h4>
+                </p>
+                <button type="button" class="button3">Contact Us!</button>
+            </td>
+            <!-- This is the first slide of the slideshow, it has an image with the specific size and 2 divs - one to show which slideshow picture it is and another one is to add a text to it. -->
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="../images/dog-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <div class="text">Caption Text</div>
+                </div>
+                <!-- This is the second slide of the slideshow, it has an image with the specific size and 2 divs - one to show which slideshow picture it is and another one is to add a text to it. -->
+                <div class="mySlides">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="../images/group-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <div class="text">Caption Two</div>
+                </div>
+                <!-- This is the third slide of the slideshow, it has an image with the specific size and 2 divs - one to show which slideshow picture it is and another one is to add a text to it. -->
+                <div class="mySlides">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="../images/dog2-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <div class=" text ">Caption Three</div>
+                </div>
+            </div>
+            <br>
+            <!-- This div is designed to style out and add the function to the code which is to change the images every 3.5 seconds as stated in the JS script  -->
+            <div style="text-align:center ">
+                <span class="fullStop "></span>
+                <span class="fullStop "></span>
+                <span class="fullStop "></span>
+            </div>
+            <!-- JavaScript script to animate the slideshow and make it change -->
+            <script>
+                var slideIndex = 0;
+                showSlides();
+                // This function defines the slides to be printed out and added onto the page, it also consists variables to help in defining what should be done, for example the variable slides puts all the 3 slides on the web page
+                // The variable dots works with the span which is defined in the div, the variable i, 
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides ");
+                    var dots = document.getElementsByClassName("fullStop ");
+                    // This code displays the slide on the index, takes one away to make the number index 0 which means this will hide every other slide images, but it will switch to anotehr one.
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none ";
+                    }
+                    //This shows that if the slide index which is was 0 is greater than the amout of slides it will change the slide index to 1 
+                    slideIndex++;
+                    if (slideIndex > slides.length) {
+                        slideIndex = 1
+                    }
+                    //this code replaces every dot/fullStop class with active and it displays on the website as each image.
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active ", " ");
+                    }
+                    //this first command displayes the slides as a block
+                    slides[slideIndex - 1].style.display = "block ";
+                    //It sets the current website to be responsive and it sets the class to be active and responsive.
+                    dots[slideIndex - 1].className += " active ";
+                    //This command will change the image every 3.5 seconds. 1 second is 1000, 2 seconds is 2000, 3 seconds are 3000 and so on
+                    setTimeout(showSlides, 3500); 
+                }
+            </script>
+            </tr>
+        </table>
+        <!-- This is a simple footer which is placed in a line at the bottom on the screen -->
+        <footer class="footer">
+            <ul>
+                <p>Check Out Our Social Media!</p>
+            </ul>
+        </footer>
+    </body>
+</head>
+</html>
