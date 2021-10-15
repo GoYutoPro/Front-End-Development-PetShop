@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+    <title>PetShop</title>
+    <!-- (A) CSS + JS -->
+    <link rel="stylesheet" href="/css/cart.css">
+    <script src="/js/products.js"></script>
+    <script src="/js/cart.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <body>
+        <table style="width:100%">
+            <div class="centre">
+                <tr>
+                    <th><a class="active" href="/html/index.html">Home Page</a></th>
+                    <th><a href="/html/pets.html">Pets</a></th>
+                    <th><a href="Contact Us!">Contact Me</a></th>
+                    <th><a href="About Us!">About Us</a></th>
+                    <th><input class="reset" type="text" placeholder="Search...">
+                        <button type="button" value="reset" class="button">Search</button></th>
+                </tr>
+            </div>
+            <table class="tableShop" style="width:100%">
+                <style>
+                    .tableShop {
+                        border: 2px solid black;
+                        width: 100%;
+                        height: 500px;
+                    }
+                </style>
+                <div id="list-cart">
+                    <div id="cart-product"></div>
+                    <!--cart-products-->
+                    <div id="current-cart"></div>
+                    <!--cart-items-->
+                </div>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+    </body>
+
+</html>
