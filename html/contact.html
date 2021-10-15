@@ -43,7 +43,7 @@
         </table>
         <!-- This code specifies how big the table is as well as its border. -->
         <table class="tableForm" width="700" height="450" border="1">
-        <!-- here are 9 divs, 6 of these divs are used for the contact form with their own type and class name to enhance their looks which are started down below. The function of the validator is also connected to the form  -->
+            <!-- here are 9 divs, 6 of these divs are used for the contact form with their own type and class name to enhance their looks which are started down below. The function of the validator is also connected to the form  -->
             <form name="FormValidator" onsubmit="return ValidateForm()">
                 <tbody>
                     <th width="10 ">
@@ -65,39 +65,47 @@
             </form>
         </table>
     </body>
-    <!-- Basic footer design, throughtout the whole website -->
+    <!-- Basic footer design, throughout the whole website -->
     <footer class="footer">
         <ul>
             <p>Check Out Our Social Media!</p>
         </ul>
     </footer>
 </head>
+<!-- This is my CSS code, I used it here on this page so the code doesn't get mixed up with bootstrap -->
 <style>
+    /* This is the table for the contact us form it's defining the size and the position with the amount of pixels away from the right margin */
+    
     .tableForm {
         width: 1200px;
         height: 550spx;
         margin-left: 350px;
     }
+    /* This is the contact Button style sheet and it only defines the size of it */
     
     .contactButton {
         width: 150px;
         height: 35px;
     }
+    /* This is the message box/text area where teh user can write their message, here on the style sheet I gave it a width and height */
     
     .textarea {
         width: 300px;
         height: 150px;
     }
+    /* This is the class made in the First Name div and this css code defines the specific width and an automatic height */
     
     .first {
         width: 200px;
         height: auto;
     }
+    /* This is my Last Name class made in a div, and again just like the first name style sheet this one also defines the height and width of the box */
     
     .last {
         width: 200px;
         height: auto;
     }
+    /* This is an email box with the class .email and here I styled out the size of the button */
     
     .email {
         width: 200px;
