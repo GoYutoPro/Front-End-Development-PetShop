@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
 
     <title>Bootstrap Example</title>
@@ -11,26 +12,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
     <title>PetShop</title>
+
     <body>
         <!--Here's my link to my stylesheet for my website located in the web root-->
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/cart.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/cart.js"></script>
         <!-- This is my div section for my Navigation Bar located at the top of the web page -->
         <table>
-            <form class="searchForm">
-                <!--This is the table with the navigation bar and a search bar-->
-                <div class="center">
-                    <nav class="topnav">
-                        <a class="active" href="index.html">Home Page</a>
-                        <a href="cart.html">Pets</a>
-                        <a href="contact.html">Contact Us</a>
-                        <a href="about.html">About Us</a>
-                        <a href="reviews.html">Reviews Page</a>
-                        <!-- Search bar and search/clear button, when the button is clicked it will reset and clear the text in the search bar -->
-                        <input class="reset" type="text" name="searchInput" placeholder="Search...">
-                        <input class="buttonReset" type="reset">
-            </form>
-            </nav>
+
+            <div class="row">
+                <div class="col-sm-8">
+
+                    <!--This is the table with the navigation bar and a search bar-->
+                    <div class="center">
+                        <nav class="topnav">
+                            <a class="active" href="index.html">Home Page</a>
+                            <a href="cart.html">Pets</a>
+                            <a href="contact.html">Contact Us</a>
+                            <a href="about.html">About Us</a>
+                            <a href="reviews.html">Reviews Page</a></div>
+                    <div class="col-sm-4">
+                        <form class="searchForm">
+                            <!-- Search bar and search/clear button, when the button is clicked it will reset and clear the text in the search bar -->
+                            <input class="reset" type="text" name="searchInput" placeholder="Search...">
+                            <input class="buttonReset" type="reset"></div>
+                </div>
+                </nav>
+                </form>
         </table>
         </div>
         <!--This is the welcome message at the top of the web page, the marquee tag allows the text to move from left to right there is also a direction stated too --->
@@ -43,7 +51,7 @@
         </td>
         <br>
         <table class="table">
-    <!-- This code defies the slideshow which is on the website, and the small table which is under it with the 2 buttons.  -->
+            <!-- This code defies the slideshow which is on the website, and the small table which is under it with the 2 buttons.  -->
             <td>
                 <p>
                     <h4>Buy your pet with just few clicks, here on our website. Check out our pet collection</h4>
@@ -58,19 +66,19 @@
             <div class="slideshow-container">
                 <div class="mySlides">
                     <div class="numbertext">1 / 3</div>
-                    <img src="images/dog-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <img src="../images/dog-closeup.jpeg" style="width: 600px;height: 300px;">
                     <div class="text">Caption Text</div>
                 </div>
                 <!-- This is the second slide of the slideshow, it has an image with the specific size and 2 divs - one to show which slideshow picture it is and another one is to add a text to it. -->
                 <div class="mySlides">
                     <div class="numbertext">2 / 3</div>
-                    <img src="images/group-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <img src="../images/group-closeup.jpeg" style="width: 600px;height: 300px;">
                     <div class="text">Caption Two</div>
                 </div>
                 <!-- This is the third slide of the slideshow, it has an image with the specific size and 2 divs - one to show which slideshow picture it is and another one is to add a text to it. -->
                 <div class="mySlides">
                     <div class="numbertext">3 / 3</div>
-                    <img src="images/dog2-closeup.jpeg" style="width: 600px;height: 300px;">
+                    <img src="../images/dog2-closeup.jpeg" style="width: 600px;height: 300px;">
                     <div class=" text ">Caption Three</div>
                 </div>
             </div>
@@ -109,7 +117,7 @@
                     //It sets the current website to be responsive and it sets the class to be active and responsive.
                     dots[slideIndex - 1].className += " active ";
                     //This command will change the image every 3.5 seconds. 1 second is 1000, 2 seconds is 2000, 3 seconds are 3000 and so on
-                    setTimeout(showSlides, 3500); 
+                    setTimeout(showSlides, 3500);
                 }
             </script>
             </tr>
@@ -122,4 +130,5 @@
         </footer>
     </body>
 </head>
+
 </html>
