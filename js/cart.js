@@ -1,7 +1,7 @@
 var cart = {
     // (A) PROPERTIES
-    hPdt: null, // These are all the products which are displayed in the HTML document 
-    hItems: null, // Everything which is in the cart at the moment on the HTML file
+    HTMLproducts: null, // These are all the products which are displayed in the HTML document 
+    HTMLitems: null, // Everything which is in the cart at the moment on the HTML file
     items: {}, // All the current items that are in the cart
     iURL: "../images/", // The link to the path where the code should get the product images 
 
@@ -30,18 +30,18 @@ var cart = {
     // This function pull the items and prints them onto the document using their ID
     show: function() {
         // Gets the items from the HTML file
-        cart.hPdt = document.getElementById("cart-products");
-        cart.hItems = document.getElementById("cart-items");
+        cart.HTMLproducts = document.getElementById("cart-products");
+        cart.HTMLitems = document.getElementById("cart-items");
 
         // (C2) Here I'm defining 3 variables and draws it onto the products 
-        cart.hPdt.innerHTML = "";
+        cart.HTMLproducts.innerHTML = "";
         let p, item, part;
         for (let id in products) {
             // This is the box which wraps all the images,names,description, and price into 1 box and put's it into a div by creating one for the product.
             p = products[id];
             item = document.createElement("div");
             item.className = "p-item";
-            cart.hPdt.appendChild(item);
+            cart.HTMLproducts.appendChild(item);
 
             // This variable is creating an image and defining a source which are the link to the image and I've appended the image to the part variable.
             part = document.createElement("img");
@@ -49,25 +49,25 @@ var cart = {
             part.className = "p-img";
             item.appendChild(part);
 
-            // PRODUCT NAME
+            // This part of the code is functional to take care of the names of the products
             part = document.createElement("div");
             part.innerHTML = p.name;
             part.className = "p-name";
             item.appendChild(part);
 
-            // PRODUCT DESCRIPTION
+            // This part of the code is functional to take care of the description of the products and items
             part = document.createElement("div");
             part.innerHTML = p.type;
             part.className = "p-type";
             item.appendChild(part);
 
-            // PRODUCT PRICE
+            // This part of the code is functional to take care of the price of the products
             part = document.createElement("div");
             part.innerHTML = "£" + p.price;
             part.className = "p-price";
             item.appendChild(part);
 
-            // ADD TO CART
+            // This part of the code is functional to take care of the cart and the adding button for the cart to work and add products
             part = document.createElement("input");
             part.type = "button";
             part.value = "Add to Cart";
@@ -77,17 +77,17 @@ var cart = {
             item.appendChild(part);
         }
 
-        // (C3) LOAD CART FROM PREVIOUS SESSION
+        // This is the load of the cart from previous sessions 
         cart.load();
 
-        // (C4) LIST CURRENT CART ITEMS
+        //  This is the current list of the items which are in the cart
         cart.list();
     },
 
     // This function lists all the items/products in a loop which are currently in the cart on the HTML until it find the right id/key, here are another 3 variables which will be worked on later on on the code.
     list: function() {
         // This resets the items which are in the cart.items
-        cart.hItems.innerHTML = "";
+        cart.HTMLitems.innerHTML = "";
         let item, part, pdt;
         let empty = true;
         for (let key in cart.items) {
@@ -98,7 +98,7 @@ var cart = {
         if (empty) {
             item = document.createElement("div");
             item.innerHTML = "Nothing Here!";
-            cart.hItems.appendChild(item);
+            cart.HTMLitems.appendChild(item);
         }
 
         // This code is rendering if the cart is not empty it lists out the items which are in the cart.items that the user adds to the object cart from the items there
@@ -110,7 +110,7 @@ var cart = {
                 p = products[id];
                 item = document.createElement("div");
                 item.className = "c-item";
-                cart.hItems.appendChild(item);
+                cart.HTMLitems.appendChild(item);
 
                 // This code creates another div and prints the product name on the website, and appends the name of an item into the part
                 part = document.createElement("div");
@@ -147,7 +147,7 @@ var cart = {
             item.className = "c-total";
             item.id = "c-total";
             item.innerHTML = "TOTAL: £" + total;
-            cart.hItems.appendChild(item);
+            cart.HTMLitems.appendChild(item);
 
             // When teh button Empty is clicked it will run the function clear and empty everything which is in the cart. 
             item = document.createElement("input");
@@ -155,7 +155,7 @@ var cart = {
             item.value = "Empty";
             item.addEventListener("click", cart.clear);
             item.className = "c-empty cart";
-            cart.hItems.appendChild(item);
+            cart.HTMLitems.appendChild(item);
 
             // This is the checkout button which when the button is clicked it prints 
             item = document.createElement("input");
@@ -163,7 +163,7 @@ var cart = {
             item.value = "Checkout";
             item.addEventListener("click", cart.checkout);
             item.className = "c-checkout cart";
-            cart.hItems.appendChild(item);
+            cart.HTMLitems.appendChild(item);
         }
     },
 
@@ -188,7 +188,7 @@ var cart = {
             cart.list();
         }
 
-        // (F2) This code updates the final/total price of the UPDATE TOTAL ONLY
+        // This code updates the final/total price of the UPDATE TOTAL ONLY
         else {
             cart.items[this.dataset.id] = this.value;
             var total = 0;
@@ -199,32 +199,17 @@ var cart = {
         }
     },
 
-    // (G) REMOVE ITEM FROM CART
+    //  This piece of codes removes an item from the cart and saves the updates list
     remove: function() {
         delete cart.items[this.dataset.id];
         cart.save();
         cart.list();
     },
 
-    // (H) CHECKOUT
+    //  This is the checkout function of the cart, and it's coded so when the button is clicked it will give out an alert
     checkout: function() {
-        // SEND DATA TO SERVER
-        // CHECKS
-        // SEND AN EMAIL
-        // RECORD TO DATABASE
-        // PAYMENT
-        // WHATEVER IS REQUIRED
         alert("Are you sure you wish to checkout!");
 
-        /*
-        var data = new FormData();
-        data.append('cart', JSON.stringify(cart.items));
-        data.append('products', JSON.stringify(products));
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "SERVER-SCRIPT");
-        xhr.onload = function(){ ... };
-        xhr.send(data);
-        */
     }
 };
 window.addEventListener("DOMContentLoaded", cart.show);

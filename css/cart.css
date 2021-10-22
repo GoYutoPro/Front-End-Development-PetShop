@@ -1,4 +1,4 @@
-/* (A) ENTIRE PAGE */
+/* This is the css code for the cart and pets page */
 
 #cart-wrap {
     font-family: arial, sans-serif;
@@ -7,12 +7,14 @@
     max-width: 1000px;
 }
 
+ /* This is the code of the products and items and their padding   */
 #cart-products,
 #cart-items {
     box-sizing: border-box;
     padding: 10px;
 }
-
+ 
+/* Here's the width in percentage of the cart products and items */
 #cart-products {
     width: 80%;
 }
@@ -21,6 +23,7 @@
     width: 80%;
 }
 
+/* This is the colour for the background colour of the button and the colour of the text */
 input.cart,
 button.cart {
     padding: 10px;
@@ -32,7 +35,7 @@ button.cart {
 }
 
 
-/* (B) PRODUCTS LIST */
+/* This is the code for the items and the products which are in the products */
 
 #cart-products {
     display: grid;
@@ -125,7 +128,7 @@ input.c-checkout {
 }
 
 
-/* (D) RESPONSIVE */
+/* Responsive of the code depending on the device */
 
 @media screen AND (max-width: 768px) {
     #cart-wrap {
