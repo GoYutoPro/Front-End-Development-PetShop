@@ -5,11 +5,10 @@
     
     .topnav {
         background-color: rgb(10, 140, 226);
-        overflow: hidden;
         text-align: left;
         text-decoration: none;
         height: 37px;
-        width: auto;
+        width: 100%;
     }
     /* This piece of code again defines the navigation bar, however this includes padding, font size, colour of the font. */
     
@@ -103,14 +102,14 @@
     }
     
     img {
-        vertical-align: middle;
+        vertical-align:auto;
     }
     /* Slideshow container */
     
     .slideshow-container {
         max-width: 1000px;
+        width: 100%;
         position: relative;
-        margin-left: 20px;
         margin: auto;
     }
     /* Caption text */
@@ -154,12 +153,10 @@
     .table {
         margin: auto;
         text-align: center;
-        width: 1230px;
-        height: 400px;
+        width: 100%;
+        height: auto;
         border: 2px solid green;
         padding: 10px;
-        margin-left: 300px;
-        margin-bottom: 30px;
         background-color: #0a8cd8;
     }
     /* End */
